@@ -9,7 +9,6 @@ import org.kohsuke.github.GHRelease;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -61,7 +60,7 @@ public class UploadReleaseAssetStepExecution extends SynchronousStepExecution<Vo
       taskListener.getLogger().printf("Started uploading %s%n", uploadAsset.filePath);
       try (InputStream assetStream = uploadAsset.toStream(workspace)) {
         release.uploadAsset(
-            new File(uploadAsset.filePath).getName(),
+            uploadAsset.filePath,
             assetStream,
             uploadAsset.contentType
         );
