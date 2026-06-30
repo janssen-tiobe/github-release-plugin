@@ -26,7 +26,7 @@ public class UploadReleaseAssetStep extends Step implements Serializable, GitHub
   public String credentialId;
   public String githubServer;
   public String repository;
-  public boolean overwrite;
+  public Boolean overwrite = false;
 
   @DataBoundConstructor
   public UploadReleaseAssetStep(String tagName) {
@@ -77,8 +77,8 @@ public class UploadReleaseAssetStep extends Step implements Serializable, GitHub
   }
 
   @DataBoundSetter
-  public void setOverwrite(String tagName) {
-    this.tagName = Util.fixEmptyAndTrim(tagName);
+  public void setOverwrite(Boolean overwrite) {
+    this.overwrite = overwrite;
   }
 
   public StepExecution start(StepContext context) throws Exception {
