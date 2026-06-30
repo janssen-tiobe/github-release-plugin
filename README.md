@@ -83,6 +83,7 @@ uploadGithubReleaseAsset(
         uploadAssets: [
                 [filePath: 'releasenotes.md'], 
                 [filePath: 'release.zip']
-        ]
+        ],
+        overwrite: true // optional
 )
 ```

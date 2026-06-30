@@ -23,4 +23,7 @@
             </f:entry>
         </fieldset>
     </f:repeatable>
+    <f:entry field="overwrite" title="Overwrite">
+        <f:checkbox/>
+    </f:entry>
 </j:jelly>
